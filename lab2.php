@@ -1,6 +1,5 @@
 <?php
 error_reporting(0);
-//retard, izmeni form action i dannie bazi. i a href ne zabud'
 $tableResult= array();
 $e = null;
 if(count($_POST)>0){

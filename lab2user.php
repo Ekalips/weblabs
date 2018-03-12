@@ -43,7 +43,7 @@
   </head>
   <body>
     <div class="container">
-      <h2><small><a href="./lab2.php"><-  </a></small>Lab ni 2</h2>
+      <h2><small><a href="./lab2.php"><-  </a></small>Lab 2</h2>
       <div class="row">
         <div class="col-md-6">
           <div class="bg-success details-block">
