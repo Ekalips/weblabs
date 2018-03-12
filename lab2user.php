@@ -1,7 +1,7 @@
 <?php
   //error_reporting(0);
   $id = intval($_GET['id']);
-  if(!$id) die("<h1><a href='/lab/lab2.php'>go back</a></h1>");
+  if(!$id) die("<h1><a href='./lab2.php'>go back</a></h1>");
   $user=array();
   $e = null;
   try {
@@ -33,16 +33,17 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">    
     <meta charset="utf-8">
     <title>User page</title>
-    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="./bootstrap.min.css" rel="stylesheet">
     <style>
       .details-block{  padding: 10px;  border-radius: 5px;}
     </style>
   </head>
   <body>
     <div class="container">
-      <h2>Lab ni ╰(•̀ 3 •́)━☆ﾟ.*･｡ﾟ<small><a href="/lab/lab2.php">вжух и назад </a></small></h2>
+      <h2><small><a href="./lab2.php"><-  </a></small>Lab ni 2</h2>
       <div class="row">
         <div class="col-md-6">
           <div class="bg-success details-block">
@@ -52,7 +53,7 @@
           </div>
         </div>
         <div class="col-md-6">
-          <form method="POST" action="/lab/lab2user.php?id=<?php echo $user['id']?>">
+          <form method="POST" action="./lab2user.php?id=<?php echo $user['id']?>">
             <div class="form-group">
             <label for="fname">Изменить имя:</label>
               <input type="text" name="uname" class="form-control" id="fname" placeholder="имя" value="<?php echo htmlspecialchars($user['name']) ?>">

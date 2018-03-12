@@ -21,7 +21,7 @@ if(count($_POST)>0){
   }
 }
 try {
-    $dbh = new PDO('mysql:host=localhost;dbname=test', "root", "");
+    $dbh = new PDO('mysql:host=localhost;dbname=ekalips', "admin", "kamisamad");
     if(count($_POST)>0 && !$e){
       $res = $dbh->query("SELECT id FROM test WHERE login=".$dbh->quote($_POST['login']));   // Проверка на наличие юзера
       if($res->rowCount()>0)                                                                // в базе
@@ -48,16 +48,17 @@ try {
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="lab2.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">    
+    <link href="./bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href=".yolo/lab1.css">
     <meta charset="utf-8">
     <title>Lab 2</title>
   </head>
   <body>
     <div class="container">
-      <h2>Lab ni ╰(•̀ 3 •́)━☆ﾟ.*･｡ﾟ</h2>
+      <h2>Lab 2</h2>
       <div class="row">
-        <div class=" col-md-6 col-sm-12">
+        <div class="col-md-6 col-sm-12">
           <?php if(count($_POST)>0): ?>
             <?php if ($e): ?>
               <div class="alert alert-danger" role="alert"><h4>Ошибка:</h4> <?php echo $e->getMessage();?></div>
@@ -65,7 +66,7 @@ try {
               <div class="alert alert-success" role="alert">Данные успешно добавлены в базу!</div>
             <?php endif; ?>
           <?php endif; ?>
-          <form method="POST" action="/lab/lab2.php">
+          <form method="POST" action="./lab2.php">
             <div class="form-group">
             <label for="fname">Ваше имя:</label>
               <input type="text" name="uname" class="form-control" id="fname" placeholder="имя" required value="<?php echo htmlspecialchars($_POST["uname"]) ?>">
@@ -111,7 +112,7 @@ try {
               <?php foreach ($tableResult as $key => $value): ?>
                 <tr>
                   <td><?php echo $value['id']; ?></td>
-                  <td><a href="/lab/lab2user.php?id=<?php echo $value['id']; ?>"><?php echo $value['name']; ?></a></td>
+                  <td><a href="./lab2user.php?id=<?php echo $value['id']; ?>"><?php echo $value['name']; ?></a></td>
                   <td><?php echo $value['login']; ?></td>
                   <td><?php echo $value['pass_hash']; ?></td>
                   <td><?php echo $value['email']; ?></td>

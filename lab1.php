@@ -1,5 +1,4 @@
 <?php
-//retard, izmeni form action
 error_reporting(0);
 if(count($_POST)>0){
   if(!strlen($_POST["e-mail"])>6)
@@ -24,11 +23,11 @@ if(count($_POST)>0){
     <link rel="stylesheet" type="text/css" href="./lab1.css">
   </head>
   <body>
-    <h1>Lab ichi ╰( ͡° ͜ʖ ͡° )つ──☆*:・ﾟ</h1>
+    <h1 calss="header">Lab 1</h1>
       <div class="container">
           <div class="form-wrapper">
             <h4>Форма регистрации</h4>
-            <form action="/lab/lab1.php" method="post">
+            <form action="./lab1.php" method="post">
               <p>Ваше имя: <input type="text" name="uname" value="<?php echo htmlspecialchars($_POST["uname"]) ?>" placeholder="name"></p>
               <p>Ваш логин: <input value="<?php echo htmlspecialchars($_POST["login"]) ?>" placeholder="login" type="text" name="login" required></p>
               <p>Пароль: <input type="password" name="pass" required=""></p>
